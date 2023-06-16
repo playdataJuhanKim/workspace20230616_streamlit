@@ -116,3 +116,57 @@ st.write('''
     ```python
     print("파이썬!")
     ''')
+
+st.title("컴포넌트")
+#위 아래로 한줄로만 ...
+#세로줄을 세워서 좌우를 구분할 수 있다.
+cols = st.columns(2)
+cols[0].write('😊')
+cols[1].write('😊')
+st.write("😊😊")
+
+cols = st.columns(3)
+cols[1].write('🙎‍♂️')
+cols[2].write('🙎‍♂️')
+st.write("🙎‍♂️")
+
+col1, col2, col3 = st.columns(3)
+
+col1.write('김치찌개')
+
+col1, col2 = st.columns(2) # 리스트 언패킹
+col1.write("왼쪽 열")
+col2.write("오른쪽 열")
+
+with col1: # col1을 기준으로 streamlit을 써주겠다
+    # 블록 (:) 을 열면 -> 이 안에서는 streamlit 기능 실행시 col1에 종속
+    st.write("왼쪽")
+with col2: # col2을 기준으로 streamlit을 써주겠다
+    # 블록 (:) 을 열면 -> 이 안에서는 streamlit 기능 실행시 col2에 종속
+    st.write("오른쪽")
+
+tab_menus = ['김치찌개', '된장찌개', '꽁치찌개']
+tab1, tab2, tab3 = st.tabs(tab_menus)
+
+tab1.write('김취찌개 맛있어요우')
+
+with tab2:
+    st.image('https://img.cjthemarket.com/images/file/product/811/20230217125627231.jpg?SF=webp')
+
+
+#입력
+st.title('입력')
+name = st.text_input('나의 이름은')
+st.write(name)
+name2 = st.text_input('너의 이름은')
+st.write(f'나는 {name}, 너는 {name2}')
+
+number = st.number_input('유얼 에이지', step=1)
+st.write(f'나는 {number}살이야.')
+
+mode = st.checkbox("엄준식")
+if mode:
+    st.write("어떻게 사람이름이")
+    st.radio('잔소리 내용 선택', ['김밥', '라면', '냉면'])
+
+st.radio('잔소리 내용 선택', ['김밥','라면','냉면'])

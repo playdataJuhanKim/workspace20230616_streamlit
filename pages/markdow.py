@@ -1,6 +1,3 @@
-import markdown_it
-
-markdown_it.MarkdownIt
 
 import streamlit as st  # streamlit -> import (가져오기) -> as (st 이름)
 
