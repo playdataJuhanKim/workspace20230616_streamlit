@@ -11,5 +11,5 @@ st.image("https://i.imgur.com/jorp5JH.png")
 
 st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL3WQ-4NkRIKo7liDW5j54KOXeDoFTvRLwzw&usqp=CAU')
 st.image('image/img.png')
-st.image('image/imges.jpeg')
+st.image('image/images.jpeg')
 #streamlit run app.py
